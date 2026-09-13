@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Contact</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .count {
+        max-width: 1800px;
+        margin: 0 auto;
+        font-size: 1em;
+      }
+
+      .count header {
+        width: 100%;
+        height: 80px;
+        background-color: rgb(19, 19, 36);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 10%;
+      }
+
+      .count header a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.5s;
+      }
+
+      .count header a h1 {
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .count header a h1 i {
+        font-size: 1.5em;
+      }
+
+      .count header a:hover {
+        color: orangered;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        gap: 50px;
+        margin: 0 15px;
+      }
+
+      main .text {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 70px;
+      }
+
+      main .text .dist {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      main .text .dist .spans {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .text .dist .spans .line {
+        width: 50px;
+        height: 5px;
+        background-color: orangered;
+        border-radius: 20px;
+      }
+
+      .text .dist .spans .span {
+        cursor: default;
+        font-weight: 600;
+      }
+
+      .text .dist h1 {
+        font-weight: 900;
+        cursor: default;
+      }
+
+      p {
+        opacity: 80%;
+      }
+
+      main .links {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+      }
+
+      main .links .link {
+        display: flex;
+        gap: 10px;
+      }
+
+      main .links .link .icon i {
+        font-size: 2em;
+      }
+
+      main .links .link .contnt h1 {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+      }
+
+      main .form form {
+        width: 400px;
+        height: 270px;
+        background-color: rgb(19, 19, 36);
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      main .form form .top {
+        display: flex;
+        gap: 10px;
+      }
+
+      main form .top div {
+        position: relative;
+      }
+
+      main form .top input {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgb(25, 25, 32);
+        border: none;
+        outline: none;
+        color: #fff;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        transition: 0.3s;
+      }
+
+      main .top label {
+        position: absolute;
+        color: #fff;
+        font-size: 0.8em;
+        font-weight: 600;
+        left: 0;
+        top: -17px;
+        transition: 0.3s;
+      }
+
+      main .form form input:focus {
+        border: 1px solid orangered;
+      }
+
+      main .form form input:focus ~ label {
+        color: orangered;
+      }
+
+      main .form form .bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      main .form form .bottom .message-input {
+        position: relative;
+      }
+
+      main .form form .bottom .message-input .message {
+        width: 100%;
+        height: 100px;
+        background-color: rgb(25, 25, 32);
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        outline: none;
+        padding: 15px 15px 80px 15px;
+        font-weight: 600;
+        border-radius: 10px;
+        color: #fff;
+        transition: 0.3s;
+      }
+      main .form form .bottom .message-input label {
+        position: absolute;
+        color: #fff;
+        left: 0;
+        top: -17px;
+        font-size: 0.8em;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      main .form form .bottom .message:focus {
+        border: 1px solid orangered;
+      }
+
+      main .form form .bottom input:focus ~ label {
+        color: orangered;
+      }
+
+      main .form form .bottom .btn {
+        height: 40px;
+        border-radius: 40px;
+        background-color: orangered;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-weight: 900;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      main .form form .bottom .btn:hover {
+        transform: scale(1.06);
+      }
+
+      main .form form .bottom .btn:active {
+        transform: scale(1);
+        opacity: 70%;
+      }
+
+      @media (max-width: 950px) {
+        .count main {
+          flex-direction: column;
+          gap: 50px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .count main .text .links {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .count main .form form input {
+          font-size: 1em;
+        }
+
+        .count main .text {
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+
+        .count main .text .spans .line {
+          width: 100%;
+        }
+
+        .count main{
+          margin-top: 10px;
+        }
+      }
+
+      .form-error{
+        color: orangered;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .btn-loading{
+        display: none;
+      }
+
+      .btn.loading .btn-text{
+        display: none;
+      }
+
+      .btn.loading .btn-loading{
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="count">
+      <header>
+        <a href="{% url 'home' %}"
+          ><h1><i class="bx bx-arrow-back"></i>Home</h1></a
+        >
+      </header>
+      <main>
+        <div class="text">
+          <div class="dist">
+            <div class="spans">
+              <span class="line"></span>
+              <span class="span">CONTACT US</span>
+            </div>
+            <h1>We'd love to hear from you.</h1>
+            <p>Have a question, a suggestion, or just want to say hi?</p>
+            <p>Get touch -- we're here for you.</p>
+          </div>
+          <div class="links">
+            <div class="link">
+              <div class="icon">
+                <i class="bx bx-location-plus"></i>
+              </div>
+              <div class="contnt">
+                <h1>Address</h1>
+                <p>Shiraz, 7th 1234 Blvrd.</p>
+                <p>Next to City Park.</p>
+              </div>
+            </div>
+            <div class="link">
+              <div class="icon">
+                <i class="bx bx-time-five"></i>
+              </div>
+              <div class="contnt">
+                <h1>Opening hours</h1>
+                <p>Mon - Sun</p>
+                <p>8:00 AM - 11:00 PM</p>
+              </div>
+            </div>
+            <div class="link">
+              <div class="icon">
+                <i class="bx bxs-phone-call"></i>
+              </div>
+              <div class="contnt">
+                <h1>Phone</h1>
+                <p>+981234567890</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form">
+          {% if error %}
+            <p class="form-error">{{ error }}</p>
+          {% endif %}
+          <form action="{% url 'add_review' %}" method="post">
+            {% csrf_token %}
+            <div class="top">
+              <div class="name_input">
+                <input
+                  type="text"
+                  name="name"
+                  class="name"
+                  id="name"
+                  placeholder="Your name"
+                />
+                <label for="name" class="name_text">Name</label>
+              </div>
+              <div class="email">
+                <input
+                  type="tel"
+                  name="email"
+                  class="email"
+                  id="email"
+                  placeholder="Your email"
+                />
+                <label for="email" class="email_text">Email</label>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="message-input">
+                <input
+                  type="text"
+                  name="message"
+                  class="message"
+                  id="message"
+                  placeholder="Your message..."
+                />
+                <label for="message" class="message_text">Message</label>
+              </div>
+              <button class="btn" type="submit">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading">Sending...</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    const button = form.querySelector(".btn");
+    const btnText = button.querySelector(".btn-text");
+    const btnLoading = button.querySelector("btn-loading");
+
+    form.addEventListener("submit", () => {
+      button.classList.add("loading");
+      button.disabled = true;
+    });
+  </script>
+</html>

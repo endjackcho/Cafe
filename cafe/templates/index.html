@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Cafe</title>
+  </head>
+  <body>
+    {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="main">
+      <header>
+        <h1><i class="bx bx-bowl-hot" style="font-size: 1.5em"></i>Cafe</h1>
+        <input type="checkbox" id="active" />
+        <label for="active" class="open">
+          <i class="bx bx-menu"></i>
+        </label>
+        <nav>
+          <label for="active" class="close">
+            <i class="bx bx-x"></i>
+          </label>
+          <a href="{% url 'home' %}">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <label for="active" class="screen"></label>
+      </header>
+      <main>
+        <div class="main">
+          <div class="image">
+            <img src="{% static 'maincofe.webp' %}" alt="png" />
+            <div class="content">
+              <h1>Coffee, pastry, and good moments.</h1>
+              <div class="btns">
+                <a href="#menu" class="btn">View Menu</a>
+                <a href="#contact" class="btn">Address</a>
+              </div>
+            </div>
+          </div>
+          <div class="menu">
+            <div class="top" id="menu">
+              <h1 class="our-menu">Our menu</h1>
+              <h3 class="some">Something for every mood.</h3>
+              <p class="from">
+                From rich coffee to sweet treats, our menu is made to make your
+                day a little better.
+              </p>
+            </div>
+            <div class="items reveal">
+              <div class="item" id="espresso">
+                <div class="img">
+                  <img src="{% static 'espresso.webp' %}" alt="img" />
+                  <div class="text">
+                    <div class="left">
+                      <h4 class="tittle">Espresso</h4>
+                      <span class="price">$3.50</span>
+                    </div>
+                    <div class="right">
+                      <span class="icon">
+                        <i class="bx bxs-right-arrow-alt"></i>
+                      </span>
+                    </div>
+                    <div class="detail">
+                      <p>Rich and bold coffe, freshly roasted.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item" id="latte">
+                <div class="img">
+                  <img src="{% static 'latte.webp' %}" alt="img" />
+                  <div class="text">
+                    <div class="left">
+                      <h4 class="tittle">Latte</h4>
+                      <span class="price">$4.00</span>
+                    </div>
+                    <div class="right">
+                      <span class="icon">
+                        <i class="bx bxs-right-arrow-alt"></i>
+                      </span>
+                    </div>
+                    <div class="detail">
+                      <p>Smooth espresso with steamed milk.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item" id="cappuccino">
+                <div class="img">
+                  <img src="{% static 'cappuccino.webp' %}" alt="img" />
+                  <div class="text">
+                    <div class="left">
+                      <h4 class="tittle">Cappuccino</h4>
+                      <span class="price">$4.50</span>
+                    </div>
+                    <div class="right">
+                      <span class="icon">
+                        <i class="bx bxs-right-arrow-alt"></i>
+                      </span>
+                    </div>
+                    <div class="detail">
+                      <p>
+                        Rich espresso topped with steamed milk and creamy foam.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item" id="croissant">
+                <div class="img">
+                  <img src="{% static 'croissant.webp' %}" alt="img" />
+                  <div class="text">
+                    <div class="left">
+                      <h4 class="tittle">Croissant</h4>
+                      <span class="price">$3.00</span>
+                    </div>
+                    <div class="right">
+                      <span class="icon">
+                        <i class="bx bxs-right-arrow-alt"></i>
+                      </span>
+                    </div>
+                    <div class="detail">
+                      <p>
+                        Freshly baked, buttery and crispy French-style
+                        croissant.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item" id="cheese">
+                <div class="img">
+                  <img src="{% static 'cheesecake.webp' %}" alt="img" />
+                  <div class="text">
+                    <div class="left">
+                      <h4 class="tittle">Cheesecake</h4>
+                      <span class="price">$5.50</span>
+                    </div>
+                    <div class="right">
+                      <span class="icon">
+                        <i class="bx bxs-right-arrow-alt"></i>
+                      </span>
+                    </div>
+                    <div class="detail">
+                      <p>
+                        Creamy cheesecake topped with fresh berries and sweet
+                        sauce.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item" id="mocha">
+                <div class="img">
+                  <img src="{% static 'mocha.webp' %}" alt="img" />
+                  <div class="text">
+                    <div class="left">
+                      <h4 class="tittle">Mocha</h4>
+                      <span class="price">$4.50</span>
+                    </div>
+                    <div class="right">
+                      <span class="icon">
+                        <i class="bx bxs-right-arrow-alt"></i>
+                      </span>
+                    </div>
+                    <div class="detail">
+                      <p>
+                        Smooth espresso blended with chocolate, steamed milk and
+                        foam.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about reveal" id="contact">
+          <div class="cafe">
+            <img src="{% static 'cafenova.webp' %}" alt="img" />
+          </div>
+          <div class="dist">
+            <div class="spans">
+              <span class="line"></span>
+              <span class="nova">ABOUT CAFE</span>
+            </div>
+            <h1>More than just a cafe.</h1>
+            <p>
+              CAFE is a cozy space where greate coffee, delicious food and good
+              people come together.we started with a simple idea -- to create a
+              place where you can slow down,relax,and enjoy the moment.
+            </p>
+            <a href="{% url 'add_review' %}" class="learn">Learn More</a>
+          </div>
+        </div>
+        <div class="moments reveal" id="gallery">
+          <div class="text">
+            <div class="spans">
+              <span class="line"></span>
+              <span class="gallery">GALLERY</span>
+            </div>
+            <h1>Moments at CAFE</h1>
+            <p>A glimpse of our space, delicious food and happy moments.</p>
+          </div>
+          <div class="images">
+            <img src="{% static 'latte.webp' %}" alt="png" />
+            <img src="{% static 'moments2.webp' %}" alt="png" />
+            <img src="{% static 'cheesecake.webp' %}" alt="png" />
+            <img src="{% static 'cappuccino.webp' %}" alt="png" />
+            <img src="{% static 'moments3.webp' %}" alt="png" />
+            <img src="{% static 'moments1.webp' %}" alt="png" />
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="span">
+          <span></span>
+        </div>
+        <div class="text">
+          <h1>Cafe</h1>
+          <p>Coffee - Pastry - Good Moments</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="{% static 'index.js' %}"></script>
+  </body>
+</html>
